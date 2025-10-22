@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useState } from "react";
+import { useState } from "react";
 import { MOCK_PLAYERS, MOCK_STATS, MOCK_INJURIES, MOCK_TRAINING } from "@/lib/mock-data/players";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -22,8 +22,8 @@ import { ArrowLeft, Edit, Users } from "lucide-react";
 import Link from "next/link";
 import { format } from "date-fns";
 
-export default function PlayerDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params);
+export default function PlayerDetailPage({ params }: { params: { id: string } }) {
+  const { id } = params;
   const player = MOCK_PLAYERS.find((p) => p.id === id);
   const playerStats = MOCK_STATS.filter((s) => s.playerId === id);
   const playerInjuries = MOCK_INJURIES.filter((i) => i.playerId === id);

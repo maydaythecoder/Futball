@@ -77,7 +77,7 @@ export function PlayerCard({ player, onEdit, onDelete, userRole = "scout" }: Pla
         </div>
       </CardContent>
       <CardFooter className="flex gap-2 pt-3 border-t">
-        <Link href={`/players/${player.id}`} className="flex-1">
+        <Link href={`/dashboard/players/${player.id}`} className="flex-1">
           <Button variant="outline" size="sm" className="w-full">
             <Eye className="h-4 w-4 mr-1" />
             View
